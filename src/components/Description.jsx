@@ -5,6 +5,7 @@ import whatsapp from '../images/whatsapp.svg'
 import leetcode from '../images/leetcode.svg'
 import github from '../images/github.svg'
 import linkedin from '../images/linkedin.svg'
+import twitter from '../images/twitter.svg'
 import { scrollToSection } from "./utils/helpers"
 
 
@@ -40,6 +41,11 @@ const Description = () => {
               collaborative and innovative development environment.
             </p>
             <div className='flex gap-2 my-8'>
+
+              <span className='h-[20px] w-6 cursor-pointer'
+                onClick={() => goToLink("https://x.com/n_narula")}>
+                <img className='h-full w-full' src={twitter} />
+              </span>
 
               <span className='h-[20px] w-6 cursor-pointer'
                 onClick={() => goToLink("https://www.linkedin.com/in/nishchaya-narula/")}>
