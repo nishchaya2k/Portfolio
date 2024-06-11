@@ -6,12 +6,14 @@ const Resume = () => {
 
 
     const frontendSkills = [
-        { 'React': '75%' },
-        { 'Javascript': '70%' },
+        { 'JavaScript': '75%' },
+        { 'Reactjs': '70%' },
         { 'HTML': '90%' },
         { 'CSS': '80%' },
         { 'Tailwind CSS': '85%' },
         { 'Responsive UI': '85%' },
+        { 'Redux': '60%' },
+        { 'TypeScript': '40%' },
     ];
 
     const otherSkills = [
