@@ -31,12 +31,13 @@ const projectsData = [
         technologies: ['React.js', 'Redux', 'Javascript', 'Tailwind CSS'],
         functionality: ['Shopping-Cart offers a organized selection of unique and limited-edition products. Users can easily navigate through categorized items and personalize their shopping experience by filtering products based on their price range '],
         features: ['Filter', 'Sort', 'Price Range', 'Add/Delete item', 'Responsive UI'],
-        duration: 'In progress',
+        duration: '6 weeks',
         gitLink: 'https://github.com/nishchaya2k/Shopping-Cart.git',
         projectLink: 'https://shopping-cart-six-psi.vercel.app/',
 
     },
 
+    // Project 3, (Video-Player)
 
 
 ]

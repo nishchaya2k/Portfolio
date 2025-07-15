@@ -2,12 +2,7 @@ import React from 'react'
 import ProjectList from './ProjectList'
 import projectsData from './ProjectData'
 
-// import movix1 from '../../images/movix1.png'
-// import movix2 from '../../images/movix2.png'
-// import movix3 from '../../images/movix3.png'
-// import shoppinCart1 from '../../images/shoppingCart1.png'
-// import shoppinCart2 from '../../images/shoppingCart2.png'
-// import shoppinCart3 from '../../images/shoppingCart3.png'
+
 
 const Project = () => {
     return (

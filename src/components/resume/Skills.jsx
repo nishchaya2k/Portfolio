@@ -1,11 +1,14 @@
 import React from 'react'
-
+import { motion } from 'framer-motion';
 const Skills = ({ data, heading }) => {
     return (
         <div>
             <h3 className="text-[21px] font-bold mb-4">{heading}</h3>
             {data.map((skill, index) => (
-                <div key={index} >
+                <motion.div key={index}
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }} >
                     {Object.entries(skill).map(([name, percentage]) => (
 
                         <div key={name} className='mb-4 w-full'>
@@ -19,9 +22,10 @@ const Skills = ({ data, heading }) => {
                             </div>
                         </div>
                     ))}
-                </div>
-            ))}
-        </div>
+                </motion.div>
+            ))
+            }
+        </div >
     )
 }
 
