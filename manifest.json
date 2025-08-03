@@ -1,0 +1,139 @@
+{
+  "name": "Porfolio",
+  "short_name": "TechCore",
+  "start_url": "/",
+  "display": "standlone",
+  "background": "#fffff",
+  "icons": [
+    {
+      "src": "./src/images/contact.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/github.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/leetcode.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/linkedin.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/project.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/resume.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/twitter.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/whatsapp.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./src/images/emp1",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./src/images/Nishchaya1.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./src/images/Nishchaya2.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./src/images/Nishchaya3.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./src/images/movix1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/movix2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/movix3.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/movix11.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/movix12.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/movix13.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/movix14.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/movix15.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/shoppinCart10.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/shoppingCart7.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/shoppingCart8.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/shoppingCart11.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/shoppingCart12.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./src/images/shoppingCart13.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

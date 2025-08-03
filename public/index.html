@@ -7,8 +7,8 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Web site created using create-react-app" />
   <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
-
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="manifest" href="../manifest.json">
+  <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
   <link rel="icon" href="portfolio.png" />
   <title>Portfolio</title>
 </head>
@@ -16,6 +16,12 @@
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+
+  <script type="text/JavaScript">
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.register('/service-worker.js').then(() => console.log("Service Worker Registered")).catch((error) => console.log("Service Worker failed", error))
+    }
+  </script>
 
 </body>
 
