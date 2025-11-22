@@ -1,65 +1,125 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import { FaBriefcase, FaGraduationCap } from 'react-icons/fa'
 
 const Education = () => {
+    const experiences = [
+        {
+            period: "September 2024 - Present",
+            company: "iDesign.Market",
+            role: "Frontend Developer",
+            description: null
+        },
+        {
+            period: "March 2024 - June 2024",
+            company: "Tipzy - SST Pvt Ltd",
+            role: "Frontend Developer Intern",
+            description: null
+        },
+        {
+            period: "Feb 2022 - Dec 2023",
+            company: "Srijan / A Material+ Company",
+            roles: [
+                { title: "Developer L1", period: "Sept 2022 - Dec 2023" },
+                { title: "JavaScript Developer", period: "Feb 2022 - Aug 2022" }
+            ]
+        }
+    ]
+
     return (
-        <div className='lg:grid grid-cols-2 gap-8 px-12 mt-8'>
-            <div>
-                <h3 className="text-xl font-bold mb-8 text-primary">Experience (2+ yrs)</h3>
-                <div>
-                    <div className='flex max-md:hidden items-center gap-4 text-sm '>
-                        <p className="px-3 py-1 border-2 rounded-full border-[#54CA95] ">September 2024 - Present</p>
-                        <p className="text-[#54CA95] font-semibold text-base">iDesign.Market</p>
+        <div className='grid lg:grid-cols-2 gap-8 lg:gap-12'>
+            {/* Experience */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-100"
+            >
+                <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
+                        <FaBriefcase className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-lg text-gray-600 font-semibold border-l-[1px] border-b-[1px] mt-4 pb-5 border-[#edebeb86]">
-                        <p>Frontend Developer</p>
-                    </div>
-                </div>
-                <div>
-                    <div className='flex max-md:hidden items-center gap-4 text-sm '>
-                        <p className="px-3 py-1 border-2 rounded-full border-[#54CA95] ">March 2024 - June 2024</p>
-                        <p className="text-[#54CA95] font-semibold text-base">Tipzy - SST Pvt Ltd</p>
-                    </div>
-                    <div className="text-lg text-gray-600 font-semibold border-l-[1px] border-b-[1px] mt-4 pb-5 border-[#edebeb86]">
-                        <p>Frontend Developer Intern</p>
-                    </div>
+                    <h3 className="text-2xl font-bold text-neutral-900">Experience</h3>
+                    <span className="text-sm text-neutral-500 font-medium">(2+ yrs)</span>
                 </div>
 
-                {/* <div>
-                    <div className='flex max-md:hidden items-center gap-4 text-sm '>
-                        <p className="px-3 py-1 border-2 rounded-full border-[#54CA95] ">December 2023 - March 2024</p>
-                        <p className="text-[#54CA95] font-semibold text-base">VeriTech Software IT Services</p>
+                <div className="space-y-6 relative pl-6 border-l-2 border-neutral-200">
+                    {experiences.map((exp, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            className="relative"
+                        >
+                            {/* Timeline dot */}
+                            <div className="absolute -left-[29px] top-1 w-4 h-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 border-4 border-white shadow-md"></div>
+                            
+                            <div className="mb-2">
+                                <span className="inline-block px-3 py-1 text-xs font-semibold text-primary-600 bg-primary-50 rounded-full mb-2">
+                                    {exp.period}
+                                </span>
+                                <h4 className="text-lg font-bold text-primary-600 mb-1">{exp.company}</h4>
+                                {exp.role ? (
+                                    <p className="text-base font-semibold text-neutral-700">{exp.role}</p>
+                                ) : (
+                                    <div className="space-y-1">
+                                        {exp.roles.map((role, idx) => (
+                                            <p key={idx} className="text-base font-semibold text-neutral-700">
+                                                {role.title}
+                                                <span className="text-xs text-neutral-500 font-normal ml-2">({role.period})</span>
+                                            </p>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </motion.div>
+
+            {/* Education */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-100"
+            >
+                <div className="flex items-center gap-3 mb-8">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 flex items-center justify-center">
+                        <FaGraduationCap className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-lg text-gray-600 font-semibold border-l-[1px] border-b-[1px] mt-4 pl-5 pb-5 border-[#edebeb86]">
-                        <p>ReactJs Intern</p>
-                    </div>
-                </div> */}
-                <div>
-                    <div className='flex max-md:hidden items-center gap-4 text-sm '>
-                        <p className="px-3 py-1 border-2 rounded-full border-[#54CA95] ">Feb 2022 - Dec 2023</p>
-                        <p className="text-[#54CA95] font-semibold text-base">Srijan / A Material+ Company</p>
-                    </div>
-                    <div className="text-lg text-gray-600 font-semibold border-l-[1px] border-b-[1px] mt-4 pb-5 border-[#edebeb86]">
-                        <p>Developer L1, <span className='text-xs text-gray-500 font-medium'>(Sept 2022 - Dec 2023)</span></p>
-                        <p>JavaScript Developer <span className='text-xs text-gray-500 font-medium'>(Feb 2022 - Aug 2022)</span></p>
-                    </div>
+                    <h3 className="text-2xl font-bold text-neutral-900">Education</h3>
                 </div>
 
-
-
-
-            </div>
-
-            <div>
-                <h3 className="text-xl font-bold mb-8 text-primary">Education</h3>
-                <div className='flex max-md:hidden items-center gap-4 text-sm '>
-                    <p className="px-3 py-1 border-2 rounded-full border-[#54CA95] ">2018 - 2022</p>
-                    <p className="text-[#54CA95] font-semibold text-base">Lovely Professional University, Punjab</p>
+                <div className="relative pl-6 border-l-2 border-neutral-200">
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4 }}
+                        className="relative"
+                    >
+                        {/* Timeline dot */}
+                        <div className="absolute -left-[29px] top-1 w-4 h-4 rounded-full bg-gradient-to-br from-accent-500 to-accent-600 border-4 border-white shadow-md"></div>
+                        
+                        <div>
+                            <span className="inline-block px-3 py-1 text-xs font-semibold text-accent-600 bg-accent-50 rounded-full mb-2">
+                                2018 - 2022
+                            </span>
+                            <h4 className="text-lg font-bold text-accent-600 mb-1">
+                                Lovely Professional University, Punjab
+                            </h4>
+                            <p className="text-base font-semibold text-neutral-700">
+                                B.Tech (Computer Science And Engineering)
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
-                <div className="border-l-[1px] border-b-[1px] mt-4 pb-5 border-[#edebeb86]">
-                    <h2 className="text-lg text-gray-600 font-semibold">B.Tech (Computer Science And Engineering)</h2>
-                </div>
-            </div>
-
+            </motion.div>
         </div>
     )
 }

@@ -2,17 +2,17 @@ import React from 'react';
 import { Typewriter } from 'react-simple-typewriter'
 
 const DynamicText = () => {
-
     return (
-        <div>
-            <h1 className='mb-4 h-8 text-2xl font-bold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%'>
-                <Typewriter words={['Frontend Developer', 'React Developer', 'JavaScript Developer']}
+        <div className="h-12 md:h-14 flex items-center">
+            <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600'>
+                <Typewriter
+                    words={['Frontend Developer', 'React Developer', 'JavaScript Developer']}
                     typeSpeed={80}
                     deleteSpeed={50}
-                    delaySpeed={1000}
-                    loop={false}
+                    delaySpeed={2000}
+                    loop={true}
                 />
-            </h1>
+            </h2>
         </div>
     )
 }

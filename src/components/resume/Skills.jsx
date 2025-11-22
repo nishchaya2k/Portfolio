@@ -1,31 +1,40 @@
 import React from 'react'
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
+
 const Skills = ({ data, heading }) => {
     return (
-        <div>
-            <h3 className="text-[21px] font-bold mb-4">{heading}</h3>
-            {data.map((skill, index) => (
-                <motion.div key={index}
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }} >
-                    {Object.entries(skill).map(([name, percentage]) => (
-
-                        <div key={name} className='mb-4 w-full'>
-                            {console.log('Percentage:', percentage)}
-                            <div className="flex justify-between">
-                                <h3 className="text-lg font-medium">{name}</h3>
-                                <p className="mt-1">{percentage}</p>
-                            </div>
-                            <div className="h-3 border-2 rounded-full flex items-start justify-start w-full">
-                                <div className={`w-[${percentage}] h-[4px] my-auto ml-[2px] rounded-full bg-[#54CA95]`} style={{ width: percentage }}></div>
-                            </div>
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-neutral-100">
+            <h3 className="text-2xl font-bold mb-8 text-neutral-900">{heading}</h3>
+            <div className="space-y-6">
+                {data.map((skill, index) => (
+                    <motion.div
+                        key={skill.name}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                    >
+                        <div className="flex justify-between items-center mb-2">
+                            <span className="text-base font-semibold text-neutral-800">
+                                {skill.name}
+                            </span>
+                            <span className="text-sm font-medium text-neutral-500">
+                                {skill.percentage}%
+                            </span>
                         </div>
-                    ))}
-                </motion.div>
-            ))
-            }
-        </div >
+                        <div className="h-2.5 bg-neutral-100 rounded-full overflow-hidden">
+                            <motion.div
+                                className="h-full rounded-full bg-gradient-to-r from-primary-500 to-accent-500"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: `${skill.percentage}%` }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: "easeOut" }}
+                            />
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
     )
 }
 

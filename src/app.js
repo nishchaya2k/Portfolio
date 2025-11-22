@@ -3,10 +3,8 @@ import Home from "./pages/Home"
 
 const App = () => {
     return (
-        <div>
-            <div className='bg-[#54CA95] flex justify-center'>
-                <Home />
-            </div>
+        <div className="min-h-screen">
+            <Home />
         </div>
     )
 }

@@ -1,12 +1,20 @@
 import React from 'react'
 import ProjectDetails from './ProjectDetails'
+import { motion } from 'framer-motion'
 
 const ProjectList = ({ projects }) => {
     return (
-        <div className="container mx-auto px-4 lg:px-20 sm:grid grid-cols-2 gap-10 mt-10 mb-16">
-            {projects?.map((project) => (
-                <ProjectDetails key={project.id} {...project} />
-                /* <ProjectDetails key={project.id} project={project} />  */
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+            {projects?.map((project, index) => (
+                <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                    <ProjectDetails {...project} />
+                </motion.div>
             ))}
         </div>
     )

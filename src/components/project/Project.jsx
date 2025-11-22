@@ -1,24 +1,33 @@
 import React from 'react'
 import ProjectList from './ProjectList'
 import projectsData from './ProjectData'
-
-
+import { motion } from 'framer-motion'
 
 const Project = () => {
     return (
-        <div>
-            <section id='projects'>
-                <div>
-                    {/* heading */}
-                    <div className='bg-[#FCFCFC] border-t-2 border-b-2 '>
-                        <h1 className='text-4xl font-bold py-12 pl-12'><span className="text-[#54CA95]">P</span>rojects</h1>
-                    </div>
+        <section id='projects' className="py-16 lg:py-24 bg-white">
+            <div className="container-padding">
+                {/* Section Heading */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">P</span>rojects
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+                    <p className="mt-4 text-neutral-600 text-lg max-w-2xl mx-auto">
+                        A collection of projects showcasing my skills and experience in web development
+                    </p>
+                </motion.div>
 
-                    {/* Projects List */}
-                    <ProjectList projects={projectsData} />
-                </div>
-            </section>
-        </div>
+                {/* Projects List */}
+                <ProjectList projects={projectsData} />
+            </div>
+        </section>
     )
 }
 

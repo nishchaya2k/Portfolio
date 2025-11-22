@@ -1,54 +1,78 @@
 import React from 'react'
 import Skills from './Skills';
 import Education from './Education';
+import { motion } from 'framer-motion';
 
 const Resume = () => {
-
-
     const frontendSkills = [
-        { 'JavaScript': '80%' },
-        { 'Reactjs': '85%' },
-        { 'HTML': '90%' },
-        { 'CSS': '90%' },
-        { 'Tailwind CSS': '80%' },
-        { 'Redux': '90%' },
-        { 'TypeScript': '70%' },
+        { name: 'JavaScript', percentage: 80 },
+        { name: 'React.js', percentage: 85 },
+        { name: 'HTML', percentage: 90 },
+        { name: 'CSS', percentage: 90 },
+        { name: 'Tailwind CSS', percentage: 80 },
+        { name: 'Redux', percentage: 90 },
+        { name: 'TypeScript', percentage: 70 },
     ];
 
     const otherSkills = [
-        { 'Problem Solving': '70%' },
-        { 'Git': '75%' }
+        { name: 'Problem Solving', percentage: 70 },
+        { name: 'Git', percentage: 75 },
+        { name: 'System Design', percentage: 65 },
+        { name: 'REST API', percentage: 75 },
+        { name: 'GraphQL', percentage: 70 }
     ]
 
     return (
-        <div>
-            <section id="resume">
-                <div className='py-2 lg:py-16' >
-                    {/* heading */}
-                    <div className='bg-[#FCFCFC] border-t-2 border-b-2'>
-                        <h1 className='text-4xl font-bold py-12 pl-12'><span className="text-[#54CA95]">R</span>esume</h1>
-                    </div>
+        <section id="resume" className="py-16 lg:py-24 bg-neutral-50">
+            <div className="container-padding">
+                {/* Section Heading */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">R</span>esume
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
+                </motion.div>
 
-                    {/* Skills */}
-                    <div className="container mx-auto">
-                        <div className="lg:grid grid-cols-2 gap-8 px-12 mt-8">
-                            {/* frontend skills */}
+                {/* Skills Section */}
+                <div className="mb-16">
+                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
                             <Skills data={frontendSkills} heading="Frontend Skills" />
+                        </motion.div>
 
-                            {/* Backend skills */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                        >
                             <Skills data={otherSkills} heading="Additional Skills" />
-                        </div>
+                        </motion.div>
                     </div>
-
-                    {/* Education and Courses */}
-                    <div className="container mx-auto">
-                        <Education />
-                    </div>
-
                 </div>
-            </section>
 
-        </div>
+                {/* Education and Experience */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    <Education />
+                </motion.div>
+            </div>
+        </section>
     )
 }
 

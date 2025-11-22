@@ -5,16 +5,16 @@ import Resume from '../components/resume/Resume'
 import Project from '../components/project/Project'
 import Contact from '../components/contact/Contact'
 
-
-
 const Home = () => {
     return (
-        <div className='w-full bg-white xl:rounded-[70px] lg:my-16 lg:mx-24 p-2'>
+        <div className='w-full min-h-screen bg-white'>
             <Navbar />
-            <Description />
-            <Resume />
-            <Project />
-            <Contact />
+            <main>
+                <Description />
+                <Resume />
+                <Project />
+                <Contact />
+            </main>
         </div>
     )
 }

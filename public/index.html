@@ -4,22 +4,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="description" content="Nishchaya Narula - Frontend Developer specializing in React.js and JavaScript. Explore my portfolio showcasing modern web applications and development projects." />
+  <meta name="keywords" content="Frontend Developer, React Developer, JavaScript Developer, Web Developer, Portfolio" />
+  <meta name="author" content="Nishchaya Narula" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nishchaya Narula - Frontend Developer Portfolio" />
+  <meta property="og:description" content="Frontend Developer specializing in React.js and JavaScript. Explore my portfolio showcasing modern web applications." />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Nishchaya Narula - Frontend Developer Portfolio" />
+  <meta property="twitter:description" content="Frontend Developer specializing in React.js and JavaScript." />
+  
   <link rel="manifest" href="../manifest.json">
-  <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
-  <link rel="icon" href="portfolio.png" />
-  <title>Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/logo512.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="192x192" href="/logo192.png" />
+  
+  <title>Nishchaya Narula - Frontend Developer Portfolio</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="root" role="main"></div>
 
-  <script type="text/JavaScript">
+  <script type="text/javascript">
     if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('/service-worker.js').then(() => console.log("Service Worker Registered")).catch((error) => console.log("Service Worker failed", error))
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log("Service Worker Registered"))
+        .catch((error) => console.log("Service Worker failed", error))
     }
   </script>
 

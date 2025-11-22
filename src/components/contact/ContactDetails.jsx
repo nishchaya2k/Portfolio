@@ -1,32 +1,125 @@
 import React from 'react'
-import { FaLinkedin, FaWhatsapp, FaLocationArrow } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { TfiEmail } from "react-icons/tfi";
+import { FaLinkedin, FaWhatsapp, FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa"
+import { motion } from 'framer-motion'
 
-
-
-//lg:absolute lg:right-[15%] lg:top-[45%]
-// absolute max-lg:static
 const ContactDetails = () => {
+    const contactInfo = [
+        {
+            icon: FaMapMarkerAlt,
+            label: "Location",
+            value: "Gurugram, Haryana",
+            link: null,
+        },
+        {
+            icon: FaPhone,
+            label: "Phone",
+            value: "+91 8684833438",
+            link: "tel:+918684833438",
+        },
+        {
+            icon: FaEnvelope,
+            label: "Email",
+            value: "n.nishchaya2000@gmail.com",
+            link: "mailto:n.nishchaya2000@gmail.com",
+        },
+    ]
+
+    const socialLinks = [
+        {
+            icon: FaLinkedin,
+            link: "https://www.linkedin.com/in/nishchaya-narula/",
+            label: "LinkedIn",
+            color: "text-blue-600",
+        },
+        {
+            icon: FaWhatsapp,
+            link: "https://wa.me/918684833438",
+            label: "WhatsApp",
+            color: "text-green-600",
+        },
+    ]
+
     return (
-        <div className='box-border bg-[#54CA95] border-t-2  rounded-lg py-10 w-full lg:w-80 xl:flex-shrink-0 xl:absolute xl:right-[120px]  xl:-bottom-36 max-xl:ml-auto '>
-            <div className='p-6 text-white max-lg:ml-4' style={{ fontfamily: 'Poppins,sans-serif' }}>
-                <h2 className='font-bold uppercase text-3xl mb-8'>CONTACT INFORMATION</h2>
+        <div className="bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600 rounded-2xl p-6 md:p-8 text-white shadow-xl h-full flex flex-col">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+            >
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">Get in Touch</h3>
+                <p className="text-primary-50 mb-8">
+                    Prefer direct contact? Reach out through any of these channels.
+                </p>
 
-                <div className='flex flex-col gap-2 justify-start'>
-                    <div className='flex gap-3 items-center'><p><FaLocationArrow />
-                    </p>GURUGRAM,HARYANA</div>
-                    <div className='flex gap-3 items-center'><p><BsFillTelephoneFill /></p> +918684833438</div>
-                    <div className='flex gap-3 items-center'><p><TfiEmail />
-                    </p>n.nishchaya2000@gmail.com</div>
+                <div className="space-y-6 mb-8">
+                    {contactInfo.map((info, index) => {
+                        const Icon = info.icon
+                        const content = (
+                            <div className="flex items-start gap-4">
+                                <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                                    <Icon className="w-5 h-5" />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-primary-100 uppercase tracking-wider mb-1">
+                                        {info.label}
+                                    </p>
+                                    {info.link ? (
+                                        <a
+                                            href={info.link}
+                                            className="text-white font-medium hover:text-primary-100 transition-colors"
+                                            aria-label={`Contact via ${info.label}: ${info.value}`}
+                                        >
+                                            {info.value}
+                                        </a>
+                                    ) : (
+                                        <p className="text-white font-medium">{info.value}</p>
+                                    )}
+                                </div>
+                            </div>
+                        )
+
+                        return (
+                            <motion.div
+                                key={info.label}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                            >
+                                {content}
+                            </motion.div>
+                        )
+                    })}
                 </div>
 
-                <div className='flex gap-3 mt-6'>
-                    <span className='bg-white rounded-2xl p-[6px] cursor-pointer'> <FaLinkedin className='text-[#54CA95]' /></span>
-
-                    <span className='bg-white rounded-2xl p-[6px] cursor-pointer'><FaWhatsapp className='text-[#54CA95]' /></span>
+                <div className="pt-6 border-t border-white/20">
+                    <p className="text-sm text-primary-100 mb-4">Connect on social media</p>
+                    <div className="flex gap-4">
+                        {socialLinks.map((social, index) => {
+                            const Icon = social.icon
+                            return (
+                                <motion.a
+                                    key={social.label}
+                                    href={social.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-12 h-12 rounded-xl bg-white flex items-center justify-center hover:bg-primary-50 transition-colors shadow-lg"
+                                    whileHover={{ scale: 1.1, y: -2 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    aria-label={`Visit ${social.label} profile`}
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                                >
+                                    <Icon className={`w-5 h-5 ${social.color}`} />
+                                </motion.a>
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }
