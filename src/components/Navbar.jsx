@@ -2,27 +2,43 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { scrollToSection } from "./utils/helpers"
 
+const navItems = [
+    { id: 'resume', label: 'Resume' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
+]
+
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
+    const [activeSection, setActiveSection] = useState('')
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50)
+
+            const scrollPosition = window.scrollY + 120
+            let currentSection = ''
+
+            navItems.forEach(({ id }) => {
+                const section = document.getElementById(id)
+                if (section && section.offsetTop <= scrollPosition) {
+                    currentSection = id
+                }
+            })
+
+            setActiveSection(currentSection)
         }
-        window.addEventListener('scroll', handleScroll)
+
+        handleScroll()
+        window.addEventListener('scroll', handleScroll, { passive: true })
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
     const menuItemClickHandler = (section, e) => {
         e.preventDefault()
+        setActiveSection(section)
         scrollToSection(section)
     }
-
-    const navItems = [
-        { id: 'resume', label: 'Resume' },
-        { id: 'projects', label: 'Projects' },
-        { id: 'contact', label: 'Contact' },
-    ]
 
     return (
         <motion.nav
@@ -62,21 +78,34 @@ const Navbar = () => {
 
                     {/* Navigation Items */}
                     <nav className="flex gap-6 md:gap-8" aria-label="Main navigation">
-                        {navItems.map((item, index) => (
+                        {navItems.map((item, index) => {
+                            const isActive = activeSection === item.id
+
+                            return (
                             <motion.a
                                 key={item.id}
                                 href={`#${item.id}`}
-                                className="text-sm font-medium text-neutral-600 hover:text-primary-600 transition-colors relative group"
+                                className={`text-sm font-medium transition-colors relative group ${
+                                    isActive
+                                        ? 'text-primary-600'
+                                        : 'text-neutral-600 hover:text-primary-600'
+                                }`}
                                 onClick={(e) => menuItemClickHandler(item.id, e)}
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 aria-label={`Navigate to ${item.label} section`}
+                                aria-current={isActive ? 'page' : undefined}
                             >
                                 {item.label}
-                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+                                <span
+                                    className={`absolute bottom-0 left-0 h-0.5 bg-primary-500 transition-all duration-300 ${
+                                        isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                                    }`}
+                                />
                             </motion.a>
-                        ))}
+                            )
+                        })}
                     </nav>
                 </div>
             </div>
