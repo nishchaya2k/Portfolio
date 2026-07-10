@@ -6,7 +6,7 @@ const DynamicText = () => {
         <div className="h-12 md:h-14 flex items-center">
             <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600'>
                 <Typewriter
-                    words={['Frontend Developer', 'React Developer', 'JavaScript Developer']}
+                    words={['Frontend Developer', 'React Engineer', 'JavaScript Developer', 'TypeScript Developer']}
                     typeSpeed={80}
                     deleteSpeed={50}
                     delaySpeed={2000}

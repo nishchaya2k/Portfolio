@@ -8,13 +8,20 @@ const Education = () => {
             period: "September 2024 - Present",
             company: "iDesign.Market",
             role: "Frontend Developer",
-            description: null
+            highlights: [
+                "Led development of 3+ core modules (Accounts, Leads, Task Manager) end-to-end",
+                "Mentored 2–3 junior developers, improving code quality and delivery speed",
+                "Optimized performance by 30% via API handling and render optimization",
+            ]
         },
         {
             period: "March 2024 - June 2024",
             company: "Tipzy - SST Pvt Ltd",
             role: "Frontend Developer Intern",
-            description: null
+            highlights: [
+                "Built DJ console frontend optimized for mobile and desktop views",
+                "Integrated RESTful APIs with React polling for real-time data updates",
+            ]
         },
         {
             period: "Feb 2022 - Dec 2023",
@@ -22,6 +29,10 @@ const Education = () => {
             roles: [
                 { title: "Developer L1", period: "Sept 2022 - Dec 2023" },
                 { title: "JavaScript Developer", period: "Feb 2022 - Aug 2022" }
+            ],
+            highlights: [
+                "Developed responsive eCommerce UI with cart, sorting, and category filters",
+                "Transitioned legacy jQuery codebase to modern JavaScript",
             ]
         }
     ]
@@ -41,7 +52,6 @@ const Education = () => {
                         <FaBriefcase className="w-6 h-6 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-neutral-900">Experience</h3>
-                    <span className="text-sm text-neutral-500 font-medium">(2+ yrs)</span>
                 </div>
 
                 <div className="space-y-6 relative pl-6 border-l-2 border-neutral-200">
@@ -73,6 +83,16 @@ const Education = () => {
                                             </p>
                                         ))}
                                     </div>
+                                )}
+                                {exp.highlights && (
+                                    <ul className="mt-3 space-y-1.5">
+                                        {exp.highlights.map((highlight, idx) => (
+                                            <li key={idx} className="text-sm text-neutral-600 flex items-start gap-2">
+                                                <span className="text-primary-500 mt-1">•</span>
+                                                <span>{highlight}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 )}
                             </div>
                         </motion.div>

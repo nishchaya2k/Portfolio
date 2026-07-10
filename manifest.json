@@ -1,9 +1,9 @@
 {
   "name": "Porfolio",
-  "short_name": "TechCore",
+  "short_name": "Porfolio",
   "start_url": "/",
-  "display": "standlone",
-  "background": "#fffff",
+  "display": "standalone",
+  "background": "#ffffff",
   "icons": [
     {
       "src": "./src/images/contact.svg",

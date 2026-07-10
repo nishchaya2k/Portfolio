@@ -30,9 +30,9 @@
     outline-offset: 2px;
   }
 
-  /* Smooth transitions */
-  * {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  /* Smooth transitions — avoid fill/stroke on SVGs (can hide react-icons in production) */
+  :where(:not(svg):not(svg *)) {
+    transition-property: color, background-color, border-color, text-decoration-color, opacity, box-shadow, transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }

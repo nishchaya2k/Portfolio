@@ -58,7 +58,7 @@ const ContactDetails = () => {
                         const content = (
                             <div className="flex items-start gap-4">
                                 <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
-                                    <Icon className="w-5 h-5" />
+                                    <Icon className="w-5 h-5 shrink-0" aria-hidden="true" />
                                 </div>
                                 <div>
                                     <p className="text-xs text-primary-100 uppercase tracking-wider mb-1">
@@ -113,7 +113,7 @@ const ContactDetails = () => {
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.3, delay: index * 0.1 }}
                                 >
-                                    <Icon className={`w-5 h-5 ${social.color}`} />
+                                    <Icon className={`w-5 h-5 shrink-0 ${social.color}`} aria-hidden="true" />
                                 </motion.a>
                             )
                         })}

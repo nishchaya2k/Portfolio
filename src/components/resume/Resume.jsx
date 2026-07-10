@@ -1,26 +1,39 @@
 import React from 'react'
-import Skills from './Skills';
+import Skills, { SkillTags } from './Skills';
 import Education from './Education';
 import { motion } from 'framer-motion';
 
 const Resume = () => {
-    const frontendSkills = [
-        { name: 'JavaScript', percentage: 80 },
-        { name: 'React.js', percentage: 85 },
-        { name: 'HTML', percentage: 90 },
-        { name: 'CSS', percentage: 90 },
-        { name: 'Tailwind CSS', percentage: 80 },
-        { name: 'Redux', percentage: 90 },
-        { name: 'TypeScript', percentage: 70 },
+    const coreSkills = [
+        { name: 'React.js', percentage: 90 },
+        { name: 'JavaScript', percentage: 88 },
+        { name: 'TypeScript', percentage: 80 },
+        { name: 'Redux', percentage: 88 },
+        { name: 'HTML & CSS', percentage: 90 },
+        { name: 'Tailwind CSS', percentage: 85 },
+        { name: 'DSA', percentage: 75 },
     ];
 
-    const otherSkills = [
-        { name: 'Problem Solving', percentage: 70 },
-        { name: 'Git', percentage: 75 },
-        { name: 'System Design', percentage: 65 },
-        { name: 'REST API', percentage: 75 },
-        { name: 'GraphQL', percentage: 70 }
-    ]
+    const architectureSkills = [
+        { name: 'REST APIs', percentage: 85 },
+        { name: 'GraphQL', percentage: 75 },
+        { name: 'System Design (HLD/LLD)', percentage: 72 },
+        { name: 'Scalable Architecture', percentage: 78 },
+        { name: 'Performance Optimization', percentage: 82 },
+        { name: 'Testing & Debugging', percentage: 80 },
+        { name: 'Git & Version Control', percentage: 85 },
+    ];
+
+    const engineeringPractices = [
+        'Cross-Browser Development',
+        'Agile Methodologies',
+        'Software Development Life-cycle',
+        'Cross-Functional Collaboration',
+        'Vite',
+        'AWS Workflows',
+        'API Integration',
+        'Responsive UI Development',
+    ];
 
     return (
         <section id="resume" className="py-16 lg:py-24 bg-neutral-50">
@@ -48,7 +61,7 @@ const Resume = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <Skills data={frontendSkills} heading="Frontend Skills" />
+                            <Skills data={coreSkills} heading="Core Technologies" />
                         </motion.div>
 
                         <motion.div
@@ -57,9 +70,19 @@ const Resume = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <Skills data={otherSkills} heading="Additional Skills" />
+                            <Skills data={architectureSkills} heading="APIs & Architecture" />
                         </motion.div>
                     </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        className="mt-8"
+                    >
+                        <SkillTags tags={engineeringPractices} heading="Engineering Practices" />
+                    </motion.div>
                 </div>
 
                 {/* Education and Experience */}
