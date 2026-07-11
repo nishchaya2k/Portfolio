@@ -4,10 +4,11 @@ import { motion } from 'framer-motion'
 
 const ProjectList = ({ projects }) => {
     return (
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-stretch">
             {projects?.map((project, index) => (
                 <motion.div
                     key={project.id}
+                    className="h-full"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

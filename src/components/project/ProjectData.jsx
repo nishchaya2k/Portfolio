@@ -39,9 +39,9 @@ const projectsData = [
     {
         id: 3,
         images: {
-            image1: require('../../images/movix12.png'),
-            image2: require('../../images/movix14.png'),
-            image3: require('../../images/movix15.png'),
+            image1: require('../../images/movix14.png'),
+            image2: require('../../images/movix15.png'),
+            image3: require('../../images/movix12.png'),
         },
         projectDetail: "MovixApp - Streaming Application",
         technologies: ['React.js', 'Redux', 'CSS'],

@@ -1,11 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="100" height="100" rx="20" fill="url(#gradient)"/>
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle">N</text>
+  <rect width="100" height="100" rx="12" fill="#111827"/>
+  <g transform="translate(8 18)">
+    <path d="M8 10h24l6 8h38a6 6 0 0 1 6 6v34a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8V18a8 8 0 0 1 8-8z" fill="#F5C542" stroke="#111827" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M8 18h30l6-8H14a8 8 0 0 0-8 8z" fill="#E8B93A" stroke="#111827" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M18 30h44a4 4 0 0 1 4 4v2H14v-2a4 4 0 0 1 4-4z" fill="#FFF7D6" stroke="#111827" stroke-width="2"/>
+  </g>
 </svg>
-

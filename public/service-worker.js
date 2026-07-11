@@ -5,7 +5,14 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(['/favicon.ico', '/favicon.svg', '/manifest.json'])
+      return cache.addAll([
+        '/favicon.ico',
+        '/favicon.svg',
+        '/favicon-16.png',
+        '/favicon-32.png',
+        '/logo192.png',
+        '/manifest.json',
+      ])
     })
   )
 })
