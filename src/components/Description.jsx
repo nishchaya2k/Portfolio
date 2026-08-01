@@ -1,5 +1,4 @@
 import React from 'react'
-import Nishchaya3 from "../images/Nishchaya3.jpeg"
 import DynamicText from './DynamicText'
 import { scrollToSection } from "./utils/helpers"
 import { motion } from 'framer-motion'
@@ -24,12 +23,7 @@ const Description = () => {
       <div className="container-padding">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Left section - Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative order-2 lg:order-1"
-          >
+        <div className="relative order-2 lg:order-1">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               {/* Decorative gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-400 via-accent-400 to-primary-600 rounded-3xl blur-2xl opacity-20 -z-10"></div>
@@ -37,17 +31,18 @@ const Description = () => {
               {/* Image container */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img
-                  src={Nishchaya3}
+                  src="./Nishchaya3_624x624.webp"
                   alt="Nishchaya Narula"
                   className="w-full h-full object-cover"
                   loading="eager"
+                  fetchPriority='high'
                 />
               </div>
               
               {/* Decorative corner accent */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl opacity-80 blur-xl"></div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right section - Content */}
           <motion.div

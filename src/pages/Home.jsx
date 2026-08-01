@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import Navbar from '../components/Navbar'
 import Description from '../components/Description'
-import Resume from '../components/resume/Resume'
-import Project from '../components/project/Project'
-import Contact from '../components/contact/Contact'
+import SectionShimmer from '../components/SectionShimmer'
+
+const Resume = lazy(() => import('../components/resume/Resume'))
+const Project = lazy(() => import('../components/project/Project'))
+const Contact = lazy(() => import('../components/contact/Contact'))
 
 const Home = () => {
     return (
@@ -11,9 +13,15 @@ const Home = () => {
             <Navbar />
             <main>
                 <Description />
-                <Resume />
-                <Project />
-                <Contact />
+                <Suspense fallback={<SectionShimmer tone="muted" />}>
+                    <Resume />
+                </Suspense>
+                <Suspense fallback={<SectionShimmer tone="plain" />}>
+                    <Project />
+                </Suspense>
+                <Suspense fallback={<SectionShimmer tone="muted" />}>
+                    <Contact />
+                </Suspense>
             </main>
         </div>
     )
